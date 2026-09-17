@@ -1,0 +1,36 @@
+# Version vom 19.1.2026 (neu mit PHP 8.4 und rewrite_mod)
+services:
+  webserver:
+    image: php:8.4-apache # PHP inkl. Apache2-Webserver
+    ports:
+      - "8000:80"
+    volumes: # lokales Volume "src" mounten in /var/www/html
+      - .:/var/www/html
+    environment:
+      - TZ=Europe/Berlin  # Deutsche Zeitzone, bringt aber nichts für PHP
+    # Extensions mysqli, PDO und mod_rewrite installieren
+    command: bash -c "docker-php-ext-install mysqli pdo pdo_mysql && a2enmod rewrite && apache2-foreground"
+  
+  db:
+    image: mariadb # neueste Version von MariaDB
+    restart: always
+    environment: # ggf. Passwörter anpassen, aber dann auch unten bei phpmyadmin ändern!
+      MYSQL_ROOT_PASSWORD: rootpasswort
+      MYSQL_DATABASE: meine_db
+      MYSQL_USER: benutzer
+      MYSQL_PASSWORD: benutzerpasswort
+      TZ: Europe/Berlin  # Deutsche Zeitzone
+    volumes: # persitente Speichern der Datenbank
+      - db_data:/var/lib/mysql
+  
+  phpmyadmin:
+    image: phpmyadmin # aktuelle Version
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: rootpasswort
+
+volumes:
+  db_data:
