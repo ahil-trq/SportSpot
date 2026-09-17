@@ -20,8 +20,8 @@ services:
       MYSQL_USER: benutzer
       MYSQL_PASSWORD: benutzerpasswort
       TZ: Europe/Berlin  # Deutsche Zeitzone
-    volumes: # persitente Speichern der Datenbank
-      - db_data:/var/lib/mysql
+    volumes:
+  - ./src:/var/www/html
   
   phpmyadmin:
     image: phpmyadmin # aktuelle Version
