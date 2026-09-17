@@ -1,16 +1,18 @@
 # Planning Mode
 
-## Architekturvorschläge
+## Frage zum Fehler -> Kein Inhalt auf Index Page
+Hey irgendwie zeigt unsere index Datei nur den Header an. Woran leigt das vielleciht? Wenn man auf buchen klickt, kommt zwar die Login Seite, aber auch ohne Inhalt
 
-- PHP ohne Framework mit gemeinsamen Includes.
-- PDO mit vorbereiteten Statements.
-- Session-basierter Buchungsassistent.
-- MariaDB-Constraint gegen Doppelbuchungen.
+Die Ursache ist gefunden: In header.php wird current_user() verwendet, aber auth.php nicht eingebunden. PHP bricht deshalb nach dem bereits ausgegebenen Header ab. Daher erscheint nur die Navigation, auch auf der Login-Seite.
 
-## Tatsächlich gewählte Lösung
+Ergänze in header.php oben:
 
-TODO: Durch das Team bestätigen und begründen.
 
-## Verworfene Alternativen
+Also:
 
-TODO: Nicht gewählte Lösungen und Gründe ergänzen.
+
+Danach sollten Landingpage, Login und Navigation vollständig angezeigt werden. Die Datei Prompts.md habe ich dabei nicht verändert.
+
+## Entscheidung
+
+"Start Implementation wurde genutzt.

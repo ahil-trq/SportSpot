@@ -2,6 +2,7 @@
 declare(strict_types=1);
 require_once __DIR__ . '/session.php';
 require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/auth.php';
 $page_title = $page_title ?? 'SportSpot';
 $flash_message = take_flash();
 ?><!doctype html>
@@ -37,3 +38,4 @@ $flash_message = take_flash();
 </header>
 <main class="container py-4">
 <?php if ($flash_message): ?><div class="alert alert-<?= e($flash_message['type']) ?>" role="alert"><?= e($flash_message['message']) ?></div><?php endif; ?>
+    test
