@@ -3,7 +3,7 @@ services:
   webserver:
     image: php:8.4-apache # PHP inkl. Apache2-Webserver
     ports:
-      - "8000:80"
+      - "8001:80"
     volumes: # lokales Volume "src" mounten in /var/www/html
       - .:/var/www/html
     environment:
@@ -21,7 +21,7 @@ services:
       MYSQL_PASSWORD: benutzerpasswort
       TZ: Europe/Berlin  # Deutsche Zeitzone
     volumes:
-  - ./src:/var/www/html
+      - db_data:/var/lib/mysql  
   
   phpmyadmin:
     image: phpmyadmin # aktuelle Version
