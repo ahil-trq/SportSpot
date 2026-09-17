@@ -16,7 +16,7 @@ Im Projektordner ausführen:
 docker compose up -d
 ```
 
-Die Anwendung ist entsprechend der unveränderten Compose-Vorlage unter `http://localhost:8000/src/index.php` erreichbar. phpMyAdmin läuft unter `http://localhost:8081`.
+Die Anwendung ist entsprechend der unveränderten Compose-Vorlage unter `http://localhost:8001/src/index.php` erreichbar. phpMyAdmin läuft unter `http://localhost:8081`.
 
 ## Datenbankimport
 

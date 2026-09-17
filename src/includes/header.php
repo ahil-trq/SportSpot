@@ -38,4 +38,3 @@ $flash_message = take_flash();
 </header>
 <main class="container py-4">
 <?php if ($flash_message): ?><div class="alert alert-<?= e($flash_message['type']) ?>" role="alert"><?= e($flash_message['message']) ?></div><?php endif; ?>
-    test
