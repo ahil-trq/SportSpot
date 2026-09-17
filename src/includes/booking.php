@@ -37,8 +37,9 @@ function occupied_slots(int $resource_id, string $date): array
     return array_map(static fn (array $row): string => substr($row['start_time'], 0, 5), $statement->fetchAll());
 }
 
-function calculate_booking(array $resource, array $extra_ids, string $coupon_code = ''): array
+function calculate_booking(array $resource, array $extra_ids, string $coupon_code = '', int $slot_count = 1): array
 {
+    $slot_count = max(1, $slot_count);
     $selected_extras = [];
     $extras_total = 0.0;
     if ($extra_ids) {
@@ -48,7 +49,7 @@ function calculate_booking(array $resource, array $extra_ids, string $coupon_cod
         $selected_extras = $statement->fetchAll();
         foreach ($selected_extras as $extra) $extras_total += (float) $extra['price'];
     }
-    $subtotal = (float) $resource['price_per_slot'] + $extras_total;
+    $subtotal = ((float) $resource['price_per_slot'] * $slot_count) + $extras_total;
     $discount = 0.0;
     $coupon = null;
     if ($coupon_code !== '') {
