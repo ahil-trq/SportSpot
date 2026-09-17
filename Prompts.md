@@ -17,14 +17,14 @@
 
 **Prompt:** Du arbeitest als Full-Stack-Entwickler an einer benoteten Hochschul-Projektarbeit. Entwickle eine verständliche, wartbare und vollständig dokumentierte Webanwendung namens **SportSpot**.
 
-## Ziel
+# Ziel
 SportSpot ist ein Buchungssystem für Sportanlagen am Standort:
 
 **Hauptstraße 1, Friedberg**
 
 Die Anwendung soll Sportplätze und Sportbereiche visuell darstellen und deren Buchung ermöglichen. Die Oberfläche und Dokumentation sind auf Deutsch.
 
-## Vorgehen
+# Vorgehen
 
 1. Analysiere zuerst den gesamten vorhandenen Workspace.
 2. Prüfe insbesondere die bereitgestellte Docker-Vorlage und deren Datenbankkonfiguration.
@@ -42,7 +42,7 @@ Die Anwendung soll Sportplätze und Sportbereiche visuell darstellen und deren B
 8. Erfinde keine erfolgreichen Testergebnisse. Dokumentiere nur tatsächlich ausgeführte Tests.
 Die Architektur soll für Studierende verständlich und während einer Live-Coding-Prüfung leicht erweiterbar sein. Vermeide unnötige Abstraktionen und übermäßig komplexe Entwurfsmuster.
 
-## Vorgeschriebene Technologien
+# Vorgeschriebene Technologien
 
 - Frontend: HTML5, CSS, Bootstrap 5 und Vanilla JavaScript
 - Backend: PHP ohne Framework
@@ -53,9 +53,9 @@ Die Architektur soll für Studierende verständlich und während einer Live-Codi
 - Alle internen Links, Form-Actions, Bilder, Skripte, Stylesheets und Fetch-URLs müssen relativ sein
 - Keine Links mit `localhost`, IP-Adressen oder führendem `/`
 
-## Funktionen
+# Funktionen
 
-### Landingpage
+# Landingpage
 Erstelle eine moderne, responsive Landingpage mit:
 
 - kurzer Beschreibung von SportSpot in ein bis zwei Sätzen,
@@ -64,7 +64,7 @@ Erstelle eine moderne, responsive Landingpage mit:
 - Übersicht der angebotenen Sportarten,
 - klarer Schaltfläche zum Buchungsprozess.
 
-### Logo und Gestaltung
+# Logo und Gestaltung
 Erstelle ein eigenes SVG-Logo unter `src/assets/img/sportspot-logo.svg`.
 
 Gestaltungsidee:
@@ -77,7 +77,7 @@ Gestaltungsidee:
 - keine fremden Marken, Stockbilder oder urheberrechtlich problematischen Grafiken.
 Nutze das Logo im Header, auf der Landingpage und im Favicon. Erstelle außerdem eigene lokale SVG-Grafiken für die Sportangebote.
 
-### Registrierung und Login
+# Registrierung und Login
 Die Registrierung enthält mindestens:
 
 - Vorname,
@@ -99,7 +99,7 @@ Umsetzen:
 - korrektes HTML-Escaping,
 - Logout.
 
-### Buchung in getrennten Seiten
+# Buchung in getrennten Seiten
 Der Buchungsvorgang besteht aus mindestens diesen vier Seiten:
 
 1. **Sportanlage auswählen**
@@ -127,15 +127,15 @@ Der Buchungsvorgang besteht aus mindestens diesen vier Seiten:
 - kein Zahlungsprozess erforderlich.
 Der Zustand des Buchungsassistenten kann sicher in der Session gespeichert werden. Jeder Schritt muss serverseitig validiert werden.
 
-### Doppelbuchungen verhindern
+# Doppelbuchungen verhindern
 Verwende feste, nicht überlappende Zeitslots. Sichere eine Buchung sowohl in PHP als auch durch eine Datenbank-Constraint ab, beispielsweise mit einem eindeutigen Index auf Anlage und Startzeit.
 
 Die finale Buchung muss innerhalb einer Datenbanktransaktion erfolgen. Wenn ein Slot zwischenzeitlich vergeben wurde, soll eine verständliche Meldung erscheinen und keine unvollständige Buchung gespeichert werden.
 
-### Eigene Buchungen
+# Eigene Buchungen
 Eingeloggte Benutzer können ausschließlich ihre eigenen Buchungen ansehen. Zeige Status, Sportanlage, Datum, Uhrzeit, Extras und Gesamtpreis an.
 
-### Zwei zusätzliche Funktionen
+# Zwei zusätzliche Funktionen
 Implementiere mindestens:
 
 1. Suche und Filterung nach Sportart, Innen-/Außenbereich und Preis.
@@ -157,7 +157,7 @@ Nutze Fremdschlüssel, sinnvolle Indizes, Zeitstempel und Seed-Daten. Lege einen
 
 Der Dump muss zur Datenbank der vorhandenen Docker-Vorlage passen.
 
-## Dateistruktur
+# Dateistruktur
 Alle Dateien der Webanwendung müssen im Ordner `src` liegen. Eine mögliche Struktur ist:
 
 - `src/index.php`
@@ -177,7 +177,7 @@ Alle Dateien der Webanwendung müssen im Ordner `src` liegen. Eine mögliche Str
 - `sql-dump/sportspot.sql`
 Gemeinsame Navigation, Footer, Datenbankverbindung, Authentifizierung, CSRF-Funktionen und Hilfsfunktionen sollen in nachvollziehbaren Includes liegen.
 
-## Pflichtdokumentation im Repository-Root
+# Pflichtdokumentation im Repository-Root
 Erstelle und pflege:
 
 - `AI-Usage.md`
@@ -189,7 +189,7 @@ Erstelle und pflege:
 - `Abgabe.md`
 Verwende exakt den Dateinamen `Relexion.md`, da er so in der Pflichtübersicht der Aufgabenstellung genannt wird.
 
-### Inhalt der Dokumentation
+# Inhalt der Dokumentation
 `AI-Usage.md`:
 
 - ChatGPT: Analyse der Aufgabenstellung, Ideenfindung und Erstellung dieses Master-Prompts
@@ -241,7 +241,7 @@ Erfinde keine Entscheidungen oder persönlichen Reflexionen des Teams. Verwende 
 - Platzhalter für den Link zum privaten THM-GitLab-Repository,
 - Hinweis, dass diese Informationen für die Moodle-Abgabe als PDF exportiert werden müssen.
 
-## Qualität und Sicherheit
+# Qualität und Sicherheit
 
 - responsives Bootstrap-Layout,
 - semantisches HTML,
@@ -254,7 +254,7 @@ Erfinde keine Entscheidungen oder persönlichen Reflexionen des Teams. Verwende 
 - klare Kommentare nur an erklärungsbedürftigen Stellen,
 - konsistente deutsche Benutzeroberfläche.
 
-## Abschlussprüfungen
+# Abschlussprüfungen
 Führe nach der Implementierung mindestens folgende Prüfungen aus und dokumentiere sie:
 
 - PHP-Syntaxprüfung aller PHP-Dateien,
@@ -278,3 +278,14 @@ Beginne jetzt ausschließlich mit Analyse und Planungsphase. Verändere noch kei
 **Entscheidung des Teams:** Entscheidung übernommen.
 
 **Reflexion:** Man hätte es vielleicht Stück für Stück angehen sollen. Die Skripte sind zwar nicht all zu schwer zu verstehen, dennoch ist es viel auf einmal.
+
+
+## 18.09.2026 · Tabelle umformatieren
+
+**Prompt:** Änder die Tabelle so um und leere alle Zeilen
+
+**Antwort:** Die Tabelle in Mini-Test-Log.md wurde auf das gewünschte Format geändert und alle bisherigen Zeilen wurden geleert. Es sind jetzt drei leere Testfall-Zeilen vorhanden.
+
+**Entscheidung des Teams:** Entscheidung übernommen.
+
+**Reflexion:** War gut.
