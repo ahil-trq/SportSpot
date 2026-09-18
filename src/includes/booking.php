@@ -61,3 +61,25 @@ function calculate_booking(array $resource, array $extra_ids, string $coupon_cod
     $discount = min($subtotal, round($discount, 2));
     return ['extras' => $selected_extras, 'subtotal' => $subtotal, 'discount' => $discount, 'total' => $subtotal - $discount, 'coupon' => $coupon];
 }
+
+function calculate_slot_bookings(array $resource, array $start_times, array $extra_ids_by_slot, string $coupon_code = ''): array
+{
+    $slots = [];
+    $subtotal = 0.0;
+    foreach ($start_times as $start_time) {
+        $calculation = calculate_booking($resource, (array) ($extra_ids_by_slot[$start_time] ?? []));
+        $calculation['start_time'] = $start_time;
+        $slots[] = $calculation;
+        $subtotal += $calculation['subtotal'];
+    }
+    $coupon = null;
+    $discount = 0.0;
+    if ($coupon_code !== '') {
+        $statement = db()->prepare('SELECT * FROM coupons WHERE code = ? AND is_active = 1 AND valid_from <= CURRENT_DATE AND valid_until >= CURRENT_DATE');
+        $statement->execute([strtoupper(trim($coupon_code))]);
+        $coupon = $statement->fetch() ?: null;
+        if ($coupon) $discount = $coupon['discount_type'] === 'percent' ? $subtotal * ((float) $coupon['discount_value'] / 100) : (float) $coupon['discount_value'];
+    }
+    $discount = min($subtotal, round($discount, 2));
+    return ['slots' => $slots, 'subtotal' => $subtotal, 'discount' => $discount, 'total' => $subtotal - $discount, 'coupon' => $coupon];
+}
