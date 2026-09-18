@@ -27,11 +27,13 @@ if (resourceForm) {
     mapFacilities.forEach((facility) => {
         facility.addEventListener('click', (event) => {
             event.preventDefault();
+            if (facility.classList.contains('is-filtered')) return;
             updateResourceSelection(facility.dataset.anlage);
         });
         facility.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
                 event.preventDefault();
+                if (facility.classList.contains('is-filtered')) return;
                 updateResourceSelection(facility.dataset.anlage);
             }
         });
