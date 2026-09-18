@@ -6,5 +6,5 @@
 
 - Matrikelnummern: 5604010 | 5598636
 
-- Privates THM-GitLab-Repository: https://github.com/ahil-trq/SportSpot
+- Privates THM-GitLab-Repository: https://git.thm.de/datr03/SportSpot.git
 
