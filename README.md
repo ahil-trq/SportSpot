@@ -47,16 +47,6 @@ Der Buchungsassistent besteht aus vier getrennten PHP-Seiten. Der Zwischenzustan
 5. Zusammenfassung prüfen und `Jetzt verbindlich buchen` ausführen.
 6. Buchung unter „Meine Buchungen“ kontrollieren.
 
-## Bisher ausgeführte Tests
+## Tests
 
-- `docker compose config`: erfolgreich
-- PHP-Syntaxprüfung aller PHP-Dateien mit PHP 8.4: erfolgreich
-- Bootstrap-Dateien lokal geladen: erfolgreich
-
-Weitere geforderte End-to-End-Tests werden nach dem Datenbankimport durchgeführt und im [Mini-Test-Log.md](Mini-Test-Log.md) dokumentiert.
-
-## Bekannte Einschränkungen
-
-- Die vorhandene Docker-Vorlage mountet den Projektroot und definiert keinen separaten Apache-DocumentRoot für `src`; daher enthält die lokale Browseradresse `src/index.php`.
-- Stornieren zukünftiger Buchungen ist derzeit nicht umgesetzt.
-- Teamdaten, Entscheidungen und persönliche Reflexionen sind in der Dokumentation als TODO markiert.
+Die vorgesehenen Tests wurden durchgeführt und sind im [Mini-Test-Log.md](Mini-Test-Log.md) dokumentiert.
