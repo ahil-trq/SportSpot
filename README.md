@@ -1,6 +1,6 @@
 # SportSpot
 
-SportSpot ist ein deutschsprachiges Buchungssystem für Sportanlagen an der Hauptstraße 1 in Friedberg. Nutzer können Anlagen filtern, feste Zeitslots buchen, Extras auswählen und ihre eigenen Buchungen einsehen.
+SportSpot ist ein deutschsprachiges Buchungssystem für Sportanlagen an der Hauptstraße 1 in Friedberg. Nutzer können Anlagen filtern, feste Zeitslots buchen, Extras auswählen, Buchungen Stornieren, Rabattcode verwenden und ihre eigenen Buchungen einsehen.
 
 ## Voraussetzungen
 
@@ -16,7 +16,7 @@ Im Projektordner ausführen:
 docker compose up -d
 ```
 
-Die Anwendung ist entsprechend der unveränderten Compose-Vorlage unter `http://localhost:8001/src/index.php` erreichbar. phpMyAdmin läuft unter `http://localhost:8081`.
+Die Anwendung ist entsprechend der unveränderten Compose-Vorlage unter `http://localhost:8001/src/index.php` erreichbar. phpMyAdmin läuft unter `http://localhost:8001`.
 
 ## Datenbankimport
 
