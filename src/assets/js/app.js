@@ -11,6 +11,7 @@ const resourceForm = document.querySelector('#resource-selection-form');
 if (resourceForm) {
     const resourceInputs = [...resourceForm.querySelectorAll('[data-map-resource]')];
     const mapFacilities = [...resourceForm.querySelectorAll('.interactive-map .facility[data-anlage]')];
+    const areaFilter = resourceForm.dataset.areaFilter || '';
 
     const updateResourceSelection = (anlage) => {
         const input = resourceInputs.find((item) => item.dataset.mapResource === anlage);
@@ -19,6 +20,8 @@ if (resourceForm) {
         resourceInputs.forEach((item) => item.closest('[data-resource-card]')?.classList.toggle('is-selected', item === input));
         mapFacilities.forEach((facility) => facility.classList.toggle('is-selected', facility.dataset.anlage === anlage));
     };
+
+    mapFacilities.forEach((facility) => facility.classList.toggle('is-filtered', areaFilter !== '' && facility.dataset.area !== areaFilter));
 
     resourceInputs.forEach((input) => input.addEventListener('change', () => updateResourceSelection(input.dataset.mapResource)));
     mapFacilities.forEach((facility) => {
