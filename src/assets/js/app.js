@@ -6,3 +6,34 @@ document.querySelectorAll('[data-price]').forEach((input) => {
         if (target) target.textContent = total.toFixed(2).replace('.', ',') + ' EUR';
     });
 });
+
+const resourceForm = document.querySelector('#resource-selection-form');
+if (resourceForm) {
+    const resourceInputs = [...resourceForm.querySelectorAll('[data-map-resource]')];
+    const mapFacilities = [...resourceForm.querySelectorAll('.interactive-map .facility[data-anlage]')];
+
+    const updateResourceSelection = (anlage) => {
+        const input = resourceInputs.find((item) => item.dataset.mapResource === anlage);
+        if (!input) return;
+        input.checked = true;
+        resourceInputs.forEach((item) => item.closest('[data-resource-card]')?.classList.toggle('is-selected', item === input));
+        mapFacilities.forEach((facility) => facility.classList.toggle('is-selected', facility.dataset.anlage === anlage));
+    };
+
+    resourceInputs.forEach((input) => input.addEventListener('change', () => updateResourceSelection(input.dataset.mapResource)));
+    mapFacilities.forEach((facility) => {
+        facility.addEventListener('click', (event) => {
+            event.preventDefault();
+            updateResourceSelection(facility.dataset.anlage);
+        });
+        facility.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                updateResourceSelection(facility.dataset.anlage);
+            }
+        });
+    });
+
+    const selectedInput = resourceInputs.find((input) => input.checked);
+    if (selectedInput) updateResourceSelection(selectedInput.dataset.mapResource);
+}
