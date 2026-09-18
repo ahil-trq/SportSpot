@@ -1,8 +1,10 @@
 # Abgabe
 
 - Projektname: SportSpot
-- Namen: TODO
-- Matrikelnummern: TODO
-- Privates THM-GitLab-Repository: TODO
 
-Diese Informationen müssen für die Moodle-Abgabe als PDF exportiert werden.
+- Namen: Mustafa Jasim Mahmood | Danish Ahil Tariq
+
+- Matrikelnummern: 5604010 | 5598636
+
+- Privates THM-GitLab-Repository: https://github.com/ahil-trq/SportSpot
+
