@@ -63,9 +63,10 @@ CREATE TABLE bookings (
     discount_amount DECIMAL(10,2) NOT NULL DEFAULT 0,
     total_price DECIMAL(10,2) NOT NULL,
     coupon_code VARCHAR(40) NULL,
+    booking_slot_active TINYINT AS (IF(status = 'confirmed', 1, NULL)) PERSISTENT,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY uq_booking_slot (resource_id, booking_date, start_time),
+    UNIQUE KEY uq_booking_slot (resource_id, booking_date, start_time, booking_slot_active),
     INDEX idx_bookings_user (user_id, booking_date),
     CONSTRAINT fk_bookings_user FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     CONSTRAINT fk_bookings_resource FOREIGN KEY (resource_id) REFERENCES resources(id) ON DELETE RESTRICT
