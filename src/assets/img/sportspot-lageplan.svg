@@ -72,7 +72,7 @@
     <rect x="410" y="107" width="278" height="276" rx="7" fill="#b5674a"/>
   </g>
 
-  <a class="facility" href="?anlage=tennis-a" xlink:href="?anlage=tennis-a" data-anlage="tennis-a" data-area="aussen" aria-label="Tennisplatz A auswählen">
+  <a class="facility" href="?anlage=tennis-a" xlink:href="?anlage=tennis-a" data-anlage="tennis-a" data-area="aussen" data-price="18" aria-label="Tennisplatz A auswählen">
     <g>
       <rect class="boundary" x="105" y="100" width="292" height="290" rx="11"/>
       <rect x="136" y="126" width="230" height="238" class="court-line"/>
@@ -86,7 +86,7 @@
     </g>
   </a>
 
-  <a class="facility" href="?anlage=tennis-b" xlink:href="?anlage=tennis-b" data-anlage="tennis-b" data-area="aussen" aria-label="Tennisplatz B auswählen">
+  <a class="facility" href="?anlage=tennis-b" xlink:href="?anlage=tennis-b" data-anlage="tennis-b" data-area="aussen" data-price="18" aria-label="Tennisplatz B auswählen">
     <g>
       <rect class="boundary" x="403" y="100" width="292" height="290" rx="11"/>
       <rect x="434" y="126" width="230" height="238" class="court-line"/>
@@ -101,7 +101,7 @@
   </a>
 
   <!-- Multifunktionshalle -->
-  <a class="facility" href="?anlage=multifunktionshalle" xlink:href="?anlage=multifunktionshalle" data-anlage="multifunktionshalle" data-area="innen" aria-label="Multifunktionshalle auswählen">
+  <a class="facility" href="?anlage=multifunktionshalle" xlink:href="?anlage=multifunktionshalle" data-anlage="multifunktionshalle" data-area="innen" data-price="35" aria-label="Multifunktionshalle auswählen">
     <g filter="url(#softShadow)">
       <rect class="boundary" x="850" y="82" width="620" height="330" rx="18"/>
       <rect x="865" y="97" width="590" height="300" rx="12" fill="url(#roof)" stroke="#466d7d" stroke-width="7"/>
@@ -117,7 +117,7 @@
   </a>
 
   <!-- Beachvolleyball -->
-  <a class="facility" href="?anlage=beachvolleyball" xlink:href="?anlage=beachvolleyball" data-anlage="beachvolleyball" data-area="aussen" aria-label="Beachvolleyballfeld auswählen">
+  <a class="facility" href="?anlage=beachvolleyball" xlink:href="?anlage=beachvolleyball" data-anlage="beachvolleyball" data-area="aussen" data-price="16" aria-label="Beachvolleyballfeld auswählen">
     <g filter="url(#softShadow)">
       <rect class="boundary" x="95" y="500" width="535" height="350" rx="24"/>
       <rect x="110" y="515" width="505" height="320" rx="17" fill="url(#sand)" stroke="#bd9656" stroke-width="6"/>
@@ -134,7 +134,7 @@
   </a>
 
   <!-- Kleinfeld -->
-  <a class="facility" href="?anlage=kleinfeld" xlink:href="?anlage=kleinfeld" data-anlage="kleinfeld" data-area="aussen" aria-label="Kleinfeld auswählen">
+  <a class="facility" href="?anlage=kleinfeld" xlink:href="?anlage=kleinfeld" data-anlage="kleinfeld" data-area="aussen" data-price="24" aria-label="Kleinfeld auswählen">
     <g filter="url(#softShadow)">
       <rect class="boundary" x="835" y="500" width="650" height="350" rx="24"/>
       <rect x="850" y="515" width="620" height="320" rx="15" fill="#3d9661" stroke="#236943" stroke-width="6"/>

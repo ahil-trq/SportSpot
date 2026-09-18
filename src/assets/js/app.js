@@ -12,6 +12,7 @@ if (resourceForm) {
     const resourceInputs = [...resourceForm.querySelectorAll('[data-map-resource]')];
     const mapFacilities = [...resourceForm.querySelectorAll('.interactive-map .facility[data-anlage]')];
     const areaFilter = resourceForm.dataset.areaFilter || '';
+    const maxPrice = Number(resourceForm.dataset.maxPrice || 0);
 
     const updateResourceSelection = (anlage) => {
         const input = resourceInputs.find((item) => item.dataset.mapResource === anlage);
@@ -21,7 +22,11 @@ if (resourceForm) {
         mapFacilities.forEach((facility) => facility.classList.toggle('is-selected', facility.dataset.anlage === anlage));
     };
 
-    mapFacilities.forEach((facility) => facility.classList.toggle('is-filtered', areaFilter !== '' && facility.dataset.area !== areaFilter));
+    mapFacilities.forEach((facility) => {
+        const outsideArea = areaFilter !== '' && facility.dataset.area !== areaFilter;
+        const overBudget = maxPrice > 0 && Number(facility.dataset.price || 0) > maxPrice;
+        facility.classList.toggle('is-filtered', outsideArea || overBudget);
+    });
 
     resourceInputs.forEach((input) => input.addEventListener('change', () => updateResourceSelection(input.dataset.mapResource)));
     mapFacilities.forEach((facility) => {
