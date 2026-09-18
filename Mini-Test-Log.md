@@ -11,3 +11,6 @@
 | 18.09.2026 | Mehrfachbuchung | Mehrer Slots sollten aufeinmal buchbar sein | ✅ ❌ | Klappt, aber die Preise pro Extras werden falsch berechnet. |
 | 18.09.2026 | "Extras" Preisberechnung | Extras werden pro Slot berechnet | ✅ | klappt |
 | 18.09.2026 | Buchungen stonieren | Buchungen können unter "meine Buchungen" stoniert werden | ✅ | klappt |
+| 18.09.2026 | Visuelle Buchung | Slots können auch durch die Plätze auf dem Lageplan gebucht werden| ✅❌ | klappt technisch, aber UI/UX macht gerade kein Sinn. Am besten wäre es auch wenn die Plätze beim filtern grau werden. |
+| 18.09.2026 | Visuelle Buchung |  Slots können auch durch die Plätze auf dem Lageplan gebucht werden| ✅ | klappt sehr gut!|
+
